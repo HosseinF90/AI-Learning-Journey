@@ -1,5 +1,8 @@
 # ignore ALL .pdf files
 *.pdf
+*.PDF
+*.Pdf
+
 
 # ignore ALL files in ANY directory named .DS_Store
 .DS_Store/
