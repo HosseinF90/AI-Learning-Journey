@@ -8,7 +8,7 @@
 - Work with TensorFlow, PyTorch, and Scikit-Learn
 
 ### 📌 Progress Tracking:
-✅ Advanced Python (March - April)  
-🔄 Machine Learning Foundations (May - July)  
+⬜ Advanced Python (March - April)  
+⬜ Machine Learning Foundations (May - July)  
 ⬜ Deep Learning & AI Specialization (August - December)  
 ⬜ Final AI Project (January 2026)  
