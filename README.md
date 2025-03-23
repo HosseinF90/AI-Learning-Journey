@@ -18,3 +18,5 @@
 ⬜ Machine Learning Foundations (May - July)  
 ⬜ Deep Learning & AI Specialization (August - December)  
 ⬜ Final AI Project (January 2026)  
+
+Visit our Python tutorial page at: https://hosseinf90.github.io/AI-Learning-Journey/
