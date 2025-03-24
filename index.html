@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn Python in 1 Hour</title>
+    <title>Learn Python With HM90</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -61,11 +61,63 @@
 
 <body>
 
-    <h1>Learn Python in 1 Hour</h1>
+    <h1>Learn Python With HM</h1>
     <p>This guide will help you install Python, set up a development environment, understand Python basics, and run your
-        first script—all in 1 hour!</p>
+        first script to Become a Pro Python programmer!</p>
+    
+    <h2>Table of Contents</h2>
+    <ol>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#install-python">Install Python</a></li>
+        <li><a href="#set-up-a-development-environment">Set Up a Development Environment</a></li>
+        <li><a href="#understand-python-syntax-and-best-practices">Understand Python Syntax and Best Practices</a></li>
+        <li><a href="#run-your-first-python-script">Run Your First Python Script</a></li>
+        <li><a href="#practice">Practice</a></li>
+    </ol>
 
-    <h2>1. Install Python (10 minutes)</h2>
+    <h2>1. Introduction</h2>
+    <p>Python is a versatile programming language used for web development, data analysis, artificial intelligence, and
+        more.</p>
+    <h3>Here's why you should learn Python:</h3>
+    <ul>
+        <li><strong>Easy to learn:</strong> Python has a simple syntax that emphasizes readability and reduces the cost
+            of program maintenance.</li>
+        <li><strong>High demand:</strong> Python is one of the most popular programming languages in the world, with
+            applications in web development, data science, machine learning, and more.</li>
+        <li><strong>Community support:</strong> Python has a large and active community that provides tutorials,
+            libraries, and frameworks to help you get started.</li>
+        <li><strong>Fast in development:</strong> Python is an interpreted language, which can save you considerable time 
+            during program development because no compilation and linking is necessary.</li>
+    </ul>
+    <h3>how this learning journey will works:</h3>
+        <p>I will update this page and in 3 months we will learn how to:
+        <ol>
+            <li><strong>installation:</strong> how to download and install last version of Python in your OS.</li>
+            <li><strong>Setting up IDE:</strong> We will work with VSCode and here I give you a full roadmap for setting up VSCode for Python Programming, but introduce other IDE's too.</li>
+            <li><strong>Run First .py:</strong> You learn how to run first .py file and see result in a console session or interactive console.</li>
+        </ol>
+        Then our journey will continue with:
+        <ol>
+            <li><strong>Python Basics:</strong> We will learn about Python syntax, variables, data types, and operators.</li>
+            <li><strong>Control Structures:</strong> We will learn about loops, conditional statements, and functions.</li>
+            <li><strong>Intermediate Topics:</strong> We will explore object-oriented programming, file handling, and exception handling.</li>
+            <li><strong>Advanced Topics:</strong> We will dive into meta programming and more advanced topics which I don't know for now.</li>
+        </ol>
+        </p>
+    <h3>Learning Method and how to use this tutorial:</h3>
+    <p>
+        <ol>
+            <li><strong>Read:</strong> Read the content and understand the concepts.</li>
+            <li><strong>Practice:</strong> Practice by writing code snippets and running them in your IDE.</li>
+            <li><strong>Doing homeworks:</strong> You should do the homeworks and check them with solution in my repo to determine how you need to learn.</li>
+            <li><strong>Ask Questions:</strong> Ask questions in the comments section or in our discord server.</li>
+            <li><strong>Review:</strong> Review the concepts regularly to reinforce your learning.</li>
+            <li><strong>Share:</strong> Share your progress and code snippets with others to get feedback.</li>
+            <li><strong>Contribute:</strong> Contribute to our open-source AI project.</li>
+        </ol>
+    </p>
+
+    <h2>2. Install Python</h2>
     <ol>
         <li>Go to the <a href="https://www.python.org/downloads/" target="_blank">official Python website</a>.</li>
         <li>Download the latest version for your OS (Windows, macOS, or Linux).</li>
@@ -81,7 +133,7 @@
         <code>python3 --version</code>.
     </div>
 
-    <h2>2. Set Up a Development Environment (15 minutes)</h2>
+    <h2>3. Set Up a Development Environment (15 minutes)</h2>
     <p>Choose one of these tools to write and run Python code:</p>
     <ul>
         <li><strong>VS Code</strong>:
@@ -110,10 +162,10 @@
         </li>
     </ul>
 
-    <h2>3. Understand Python Syntax and Best Practices (25 minutes)</h2>
+    <h2>4. Understand Python Syntax and Best Practices (25 minutes)</h2>
     <p>Python is known for its simplicity and readability. Here’s a deeper dive into its syntax and best practices:</p>
 
-    <h3>3.1 Variables and Data Types</h3>
+    <h3>4.1 Variables and Data Types</h3>
     <p>Python is dynamically typed, meaning you don’t need to declare variable types. Common data types include:</p>
     <ul>
         <li><strong>Integers</strong>: <code>x = 10</code></li>
@@ -126,7 +178,7 @@
         of <code>ua</code>).
     </div>
 
-    <h3>3.2 Indentation and Code Blocks</h3>
+    <h3>4.2 Indentation and Code Blocks</h3>
     <p>Python uses indentation (spaces or tabs) to define code blocks. For example:</p>
     <pre><code>if 5 > 2:
     print("Five is greater than two!")  # This is part of the if block
@@ -136,7 +188,7 @@ print("This is outside the if block")  # This is not</code></pre>
         8 recommendation).
     </div>
 
-    <h3>3.3 Comments</h3>
+    <h3>4.3 Comments</h3>
     <p>Use <code>#</code> for single-line comments and triple quotes (<code>"""</code>) for multi-line comments:</p>
     <pre><code># This is a single-line comment
 
@@ -146,7 +198,7 @@ It can span multiple lines.
 """
 </code></pre>
 
-    <h3>3.4 Functions</h3>
+    <h3>4.4 Functions</h3>
     <p>Functions are defined using the <code>def</code> keyword. For example:</p>
     <pre><code>def greet(name):
     print(f"Hello, {name}!")  # f-strings make string formatting easy
@@ -157,14 +209,14 @@ greet("Alice")  # Output: Hello, Alice!
         <strong>Tip:</strong> Use meaningful function names and keep functions small and focused.
     </div>
 
-    <h3>3.5 Lists and Loops</h3>
+    <h3>4.5 Lists and Loops</h3>
     <p>Lists are ordered collections of items. You can loop through them using a <code>for</code> loop:</p>
     <pre><code>fruits = ["apple", "banana", "cherry"]
 for fruit in fruits:
     print(fruit)
 </code></pre>
 
-    <h3>3.6 Error Handling</h3>
+    <h3>4.6 Error Handling</h3>
     <p>Use <code>try</code> and <code>except</code> to handle errors gracefully:</p>
     <pre><code>try:
     result = 10 / 0
@@ -172,7 +224,7 @@ except ZeroDivisionError:
     print("Cannot divide by zero!")
 </code></pre>
 
-    <h2>4. Run Your First Python Script (10 minutes)</h2>
+    <h2>5. Run Your First Python Script (10 minutes)</h2>
     <ol>
         <li>Open your IDE or text editor and create a file named <code>hello.py</code>.</li>
         <li>Add this code:
@@ -188,7 +240,7 @@ print("Hello, World!")</code></pre>
         </li>
     </ol>
 
-    <h2>5. Practice (10 minutes)</h2>
+    <h2>6. Practice (10 minutes)</h2>
     <p>Try these exercises to reinforce your learning:</p>
     <ul>
         <li>Create a script that prints your name.</li>
