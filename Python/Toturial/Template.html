@@ -17,46 +17,26 @@
         <a href="#contact">Contact</a>
     </nav>
     <main>
-        <section>
-            <h2>
-                Table Of Content
-            </h2>
-            <ul>
-                <li>
-                    <a href="#introduction">Introduction</a>
-                </li>
-                <li>
-                    <a href="#basics">Basics</a>
-                </li>
-                <li>
-                    <a href="#advanced">Advanced</a>
-                </li>
-            </ul>
-        </section>
         <section id="introduction">
             <h2>Introduction</h2>
-            <p>
-                This tutorial is designed to guide you from the basics of Python programming to advanced concepts, with a focus on AI development. 
-                Python is the backbone of artificial intelligence, powering machine learning models, deep learning frameworks, and data analysis pipelines. 
-                By mastering Python, you will gain the skills to build AI applications, automate tasks, and analyze complex datasets. 
-                Through practical examples and projects, we will explore Python's capabilities in AI, including libraries like TensorFlow, PyTorch, and scikit-learn. 
-                All examples and projects are available in my repository as Jupyter Notebooks for hands-on learning.
-            </p>
+            <p>Learn the basics of Python programming, one of the most popular programming languages.</p>
         </section>
-        <section id="run-python">
-            <h2>Python Interactive Interpreter</h2>
-            <div id="terminal"
-                style="background-color: #000; color: #00ff15; padding: 10px; font-family: monospace; height: 50px; overflow-y: auto;">
-                <div id="output"></div>
-                <div>
-                    <span>&gt;&gt;&gt; </span><input id="python-input" type="text"
-                        style="background-color: #000; color: #00ff15; border: none; outline: none; width: 90%;">
-                </div>
-            </div>
+        <section id="basics">
+            <h2>Basics</h2>
+            <p>Understand Python syntax, variables, data types, and more.</p>
         </section>
         <section id="advanced">
             <h2>Advanced</h2>
-            <p>Dive into advanced topics like object-oriented programming, modules, libraries, and AI-specific frameworks.</p>
+            <p>Explore advanced topics like object-oriented programming, modules, and libraries.</p>
+        </section>
+        <section id="run-python">
+            <h2>Python Interactive Interpreter</h2>
+            <div id="terminal" style="background-color: #000; color: #fff; padding: 10px; font-family: monospace; height: 300px; overflow-y: auto;">
+                <div id="output"></div>
+                <div>
+                    <span>&gt;&gt;&gt; </span><input id="python-input" type="text" style="background-color: #000; color: #fff; border: none; outline: none; width: 90%;">
+                </div>
+            </div>
         </section>
     </main>
     <footer>
@@ -70,19 +50,22 @@
             const outputDiv = document.getElementById('output');
             const inputField = document.getElementById('python-input');
 
+            let multiLineCode = ''; // To store multi-line input
+            let isMultiLine = false; // Flag to track if we are in a multi-line block
+
             // Redirect Python's stdout to capture print() outputs
             pyodide.runPython(`
-                    import sys
-                    class StdoutRedirector:
-                        def __init__(self):
-                            self.output = []
-                        def write(self, text):
-                            self.output.append(text)
-                        def flush(self):
-                            pass
-                    sys.stdout = StdoutRedirector()
-                    sys.stderr = StdoutRedirector()
-                `);
+                import sys
+                class StdoutRedirector:
+                    def __init__(self):
+                        self.output = []
+                    def write(self, text):
+                        self.output.append(text)
+                    def flush(self):
+                        pass
+                sys.stdout = StdoutRedirector()
+                sys.stderr = StdoutRedirector()
+            `);
 
             inputField.addEventListener('keydown', async (event) => {
                 if (event.key === 'Enter') {
@@ -92,8 +75,13 @@
                     inputLine.textContent = `>>> ${code}`;
                     outputDiv.appendChild(inputLine);
                     inputField.value = '';
+
+                    // Handle multi-line input
+                    multiLineCode += code + '\n';
                     try {
-                        const result = await pyodide.runPythonAsync(code);
+                        // Check if the code is complete
+                        pyodide.runPython(multiLineCode);
+                        const result = await pyodide.runPythonAsync(multiLineCode);
                         const stdout = pyodide.runPython('sys.stdout.output');
                         const output = Array.from(stdout).join(''); // Convert Python list to JavaScript array
                         pyodide.runPython('sys.stdout.output.clear()');
@@ -107,11 +95,24 @@
                             resultLine.textContent = result;
                             outputDiv.appendChild(resultLine);
                         }
+                        multiLineCode = ''; // Clear multi-line buffer after successful execution
+                        isMultiLine = false; // Reset multi-line flag
                     } catch (error) {
-                        const errorLine = document.createElement('div');
-                        errorLine.textContent = error;
-                        errorLine.style.color = 'red';
-                        outputDiv.appendChild(errorLine);
+                        if (error.message.includes('expected an indented block') || error.message.includes('unexpected EOF')) {
+                            // Incomplete code, wait for more input
+                            const continuationLine = document.createElement('div');
+                            continuationLine.textContent = '... ';
+                            outputDiv.appendChild(continuationLine);
+                            isMultiLine = true; // Set multi-line flag
+                        } else {
+                            // Display error for invalid code
+                            const errorLine = document.createElement('div');
+                            errorLine.textContent = error;
+                            errorLine.style.color = 'red';
+                            outputDiv.appendChild(errorLine);
+                            multiLineCode = ''; // Clear buffer on error
+                            isMultiLine = false; // Reset multi-line flag
+                        }
                     }
                     terminal.scrollTop = terminal.scrollHeight;
                 }
