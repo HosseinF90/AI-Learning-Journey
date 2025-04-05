@@ -17,21 +17,121 @@
         <a href="#contact">Contact</a>
     </nav>
     <main>
-        <section id="introduction">
-            <h2>Introduction</h2>
-            <p>Learn the basics of Python programming, one of the most popular programming languages.</p>
+        <section>
+            <h2>
+                Table Of Content
+            </h2>
+            <ul>
+                <li>
+                    <a href="#introduction">Introduction</a>
+                </li>
+                <li>
+                    <a href="#basics">Basics</a>
+                </li>
+                <li>
+                    <a href="#advanced">Advanced</a>
+                </li>
+            </ul>
         </section>
-        <section id="basics">
-            <h2>Basics</h2>
-            <p>Understand Python syntax, variables, data types, and more.</p>
+        <section id="introduction">
+            <h2>
+                Introduction
+            </h2>
+            <p>
+                This tutorial is designed to guide you from the basics of Python programming to advanced concepts, with a focus on AI development. 
+                Python is the backbone of artificial intelligence, powering machine learning models, deep learning frameworks, and data analysis pipelines. 
+                By mastering Python, you will gain the skills to build AI applications, automate tasks, and analyze complex datasets. 
+                Through practical examples and projects, we will explore Python's capabilities in AI, including libraries like TensorFlow, PyTorch, and scikit-learn. 
+                All examples and projects are available in my repository as Jupyter Notebooks for hands-on learning.
+            </p>
+        </section>
+        <section>
+            <h2>
+                Use Python as a simple calculator
+            </h2>
+            <p>
+                Open your command line.
+                <Div class="note">
+                    <strong>Note: <br></strong>For windows you should use CMD or PowerShell. For Unix or MacOS, you should use Terminal.
+                </Div>
+                Type <code>python</code> or <code>python3</code> command line and press Enter key on your keyboard.
+            </p>
+        </section>
+        <section id="run-python">
+            <h2>Python Interactive Interpreter</h2>
+            <div id="terminal"
+                style="background-color: #000; color: #00ff15; padding: 10px; font-family: monospace; height: 50px; overflow-y: auto;">
+                <div id="output"></div>
+                <div>
+                    <span>&gt;&gt;&gt; </span><input id="python-input" type="text"
+                        style="background-color: #000; color: #00ff15; border: none; outline: none; width: 90%;">
+                </div>
+            </div>
         </section>
         <section id="advanced">
             <h2>Advanced</h2>
-            <p>Explore advanced topics like object-oriented programming, modules, and libraries.</p>
+            <p>Dive into advanced topics like object-oriented programming, modules, libraries, and AI-specific frameworks.</p>
         </section>
     </main>
     <footer>
         <p>&copy; 2023 Python Tutorial. All rights reserved.</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+    <script>
+        async function main() {
+            const pyodide = await loadPyodide();
+            const terminal = document.getElementById('terminal');
+            const outputDiv = document.getElementById('output');
+            const inputField = document.getElementById('python-input');
+
+            // Redirect Python's stdout to capture print() outputs
+            pyodide.runPython(`
+                    import sys
+                    class StdoutRedirector:
+                        def __init__(self):
+                            self.output = []
+                        def write(self, text):
+                            self.output.append(text)
+                        def flush(self):
+                            pass
+                    sys.stdout = StdoutRedirector()
+                    sys.stderr = StdoutRedirector()
+                `);
+
+            inputField.addEventListener('keydown', async (event) => {
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+                    const code = inputField.value;
+                    const inputLine = document.createElement('div');
+                    inputLine.textContent = `>>> ${code}`;
+                    outputDiv.appendChild(inputLine);
+                    inputField.value = '';
+                    try {
+                        const result = await pyodide.runPythonAsync(code);
+                        const stdout = pyodide.runPython('sys.stdout.output');
+                        const output = Array.from(stdout).join(''); // Convert Python list to JavaScript array
+                        pyodide.runPython('sys.stdout.output.clear()');
+                        if (output.trim()) {
+                            const outputLine = document.createElement('div');
+                            outputLine.textContent = output;
+                            outputDiv.appendChild(outputLine);
+                        }
+                        if (result !== undefined) {
+                            const resultLine = document.createElement('div');
+                            resultLine.textContent = result;
+                            outputDiv.appendChild(resultLine);
+                        }
+                    } catch (error) {
+                        const errorLine = document.createElement('div');
+                        errorLine.textContent = error;
+                        errorLine.style.color = 'red';
+                        outputDiv.appendChild(errorLine);
+                    }
+                    terminal.scrollTop = terminal.scrollHeight;
+                }
+            });
+        }
+        main();
+    </script>
 </body>
 </html>

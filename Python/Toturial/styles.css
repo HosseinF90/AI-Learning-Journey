@@ -64,3 +64,30 @@ th {
 tr:nth-child(even) {
     background-color: #f2f2f2;
 }
+.note {
+    background-color: #e3f2fd;
+    padding: 10px;
+    border-left: 4px solid #2196f3;
+    margin: 10px 0;
+}
+code {
+    background-color: #f4f4f4;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+pre {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+a {
+    color: #0366d6;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

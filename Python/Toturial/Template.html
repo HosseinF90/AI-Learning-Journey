@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Tutorial</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Python Tutorial</h1>
+    </header>
+    <nav>
+        <a href="#introduction">Introduction</a>
+        <a href="#basics">Basics</a>
+        <a href="#advanced">Advanced</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <main>
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>Learn the basics of Python programming, one of the most popular programming languages.</p>
+        </section>
+        <section id="basics">
+            <h2>Basics</h2>
+            <p>Understand Python syntax, variables, data types, and more.</p>
+        </section>
+        <section id="advanced">
+            <h2>Advanced</h2>
+            <p>Explore advanced topics like object-oriented programming, modules, and libraries.</p>
+        </section>
+        <section id="run-python">
+            <h2>Python Interactive Interpreter</h2>
+            <div id="terminal" style="background-color: #000; color: #fff; padding: 10px; font-family: monospace; height: 300px; overflow-y: auto;">
+                <div id="output"></div>
+                <div>
+                    <span>&gt;&gt;&gt; </span><input id="python-input" type="text" style="background-color: #000; color: #fff; border: none; outline: none; width: 90%;">
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Python Tutorial. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+    <script>
+        async function main() {
+            const pyodide = await loadPyodide();
+            const terminal = document.getElementById('terminal');
+            const outputDiv = document.getElementById('output');
+            const inputField = document.getElementById('python-input');
+
+            let multiLineCode = ''; // To store multi-line input
+            let isMultiLine = false; // Flag to track if we are in a multi-line block
+
+            // Redirect Python's stdout to capture print() outputs
+            pyodide.runPython(`
+                import sys
+                class StdoutRedirector:
+                    def __init__(self):
+                        self.output = []
+                    def write(self, text):
+                        self.output.append(text)
+                    def flush(self):
+                        pass
+                sys.stdout = StdoutRedirector()
+                sys.stderr = StdoutRedirector()
+            `);
+
+            inputField.addEventListener('keydown', async (event) => {
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+                    const code = inputField.value;
+                    const inputLine = document.createElement('div');
+                    inputLine.textContent = `>>> ${code}`;
+                    outputDiv.appendChild(inputLine);
+                    inputField.value = '';
+
+                    // Handle multi-line input
+                    multiLineCode += code + '\n';
+                    try {
+                        // Check if the code is complete
+                        pyodide.runPython(multiLineCode);
+                        const result = await pyodide.runPythonAsync(multiLineCode);
+                        const stdout = pyodide.runPython('sys.stdout.output');
+                        const output = Array.from(stdout).join(''); // Convert Python list to JavaScript array
+                        pyodide.runPython('sys.stdout.output.clear()');
+                        if (output.trim()) {
+                            const outputLine = document.createElement('div');
+                            outputLine.textContent = output;
+                            outputDiv.appendChild(outputLine);
+                        }
+                        if (result !== undefined) {
+                            const resultLine = document.createElement('div');
+                            resultLine.textContent = result;
+                            outputDiv.appendChild(resultLine);
+                        }
+                        multiLineCode = ''; // Clear multi-line buffer after successful execution
+                        isMultiLine = false; // Reset multi-line flag
+                    } catch (error) {
+                        if (error.message.includes('expected an indented block') || error.message.includes('unexpected EOF')) {
+                            // Incomplete code, wait for more input
+                            const continuationLine = document.createElement('div');
+                            continuationLine.textContent = '... ';
+                            outputDiv.appendChild(continuationLine);
+                            isMultiLine = true; // Set multi-line flag
+                        } else {
+                            // Display error for invalid code
+                            const errorLine = document.createElement('div');
+                            errorLine.textContent = error;
+                            errorLine.style.color = 'red';
+                            outputDiv.appendChild(errorLine);
+                            multiLineCode = ''; // Clear buffer on error
+                            isMultiLine = false; // Reset multi-line flag
+                        }
+                    }
+                    terminal.scrollTop = terminal.scrollHeight;
+                }
+            });
+        }
+        main();
+    </script>
+</body>
+</html>
