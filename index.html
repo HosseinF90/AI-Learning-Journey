@@ -22,329 +22,341 @@
     <main>
         <p>This guide will help you install Python, set up a development environment, and master Python programming with a focus on AI development.</p>
     
-        <h2>Table of Contents</h2>
-            <ol>
-                <li><a href="#introduction">Introduction</a></li>
-                <li><a href="#install-python">Install Python</a></li>
-                <li><a href="#setupIDE">Set Up a Development Environment</a></li>
-                <li><a href="#run-your-first-python-script">Run Your First Python Script</a></li>
-                <li><a href="Python/Toturial/Basic.Html">Basic Python Tutorial</a></li>
-            </ol>
+        <Section>
+            <h2>Table of Contents</h2>
+                <ol>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#install-python">Install Python</a></li>
+                    <li><a href="#setupIDE">Set Up a Development Environment</a></li>
+                    <li><a href="#run-your-first-python-script">Run Your First Python Script</a></li>
+                    <li><a href="Python/Toturial/Basic.Html">Basic Python Tutorial</a></li>
+                </ol>
+        </Section>
 
-        <h2 id="Introduction">1. Introduction</h2>
-        <p>
-            Python is the cornerstone of artificial intelligence, enabling developers to create machine learning models, deep learning frameworks, and data analysis tools. 
-            Its simplicity and extensive libraries make it the go-to language for AI development. 
-            This tutorial will take you from the basics of Python programming to advanced AI concepts, equipping you with the skills to build intelligent applications. 
-            Whether you're automating tasks, analyzing data, or creating AI models, Python provides the tools and flexibility to achieve your goals. 
-            Through practical examples and projects, we will explore Python's role in AI, using libraries like TensorFlow, PyTorch, and scikit-learn.
-        </p>
-            
-            <h3>Here's why you should learn Python:</h3>
+        <Section>
+            <h2 id="Introduction">1. Introduction</h2>
+            <p>
+                Python is the cornerstone of artificial intelligence, enabling developers to create machine learning models, deep learning frameworks, and data analysis tools. 
+                Its simplicity and extensive libraries make it the go-to language for AI development. 
+                This tutorial will take you from the basics of Python programming to advanced AI concepts, equipping you with the skills to build intelligent applications. 
+                Whether you're automating tasks, analyzing data, or creating AI models, Python provides the tools and flexibility to achieve your goals. 
+                Through practical examples and projects, we will explore Python's role in AI, using libraries like TensorFlow, PyTorch, and scikit-learn.
+            </p>
+                
+                <h3>Here's why you should learn Python:</h3>
+                    <ul>
+                        <li><strong>Easy to learn:</strong> Python has a simple syntax that emphasizes readability and reduces the cost
+                            of program maintenance.</li>
+                        <li><strong>High demand:</strong> Python is one of the most popular programming languages in the world, with
+                            applications in web development, data science, machine learning, and more.</li>
+                        <li><strong>Community support:</strong> Python has a large and active community that provides tutorials,
+                            libraries, and frameworks to help you get started.</li>
+                        <li><strong>Fast in development:</strong> Python is an interpreted language, which can save you considerable time 
+                            during program development because no compilation and linking is necessary.</li>
+                    </ul>
+                <h3>how this learning journey will works:</h3>
+                    <p>I will update this page and in 3 months we will learn how to:
+                        <ul>
+                            <li><strong>installation:</strong> how to download and install last version of Python in your OS.</li>
+                            <li><strong>Setting up IDE:</strong> We will work with VSCode and here I give you a full roadmap for setting up VSCode for Python Programming, but introduce other IDE's too.</li>
+                            <li><strong>Run First .py:</strong> You learn how to run first .py file and see result in a console session or interactive console.</li>
+                        </ul>
+                    Then our journey will continue with:
+                        <ul>
+                            <li><strong>Python Basics:</strong> We will learn about Python syntax, variables, data types, and operators.</li>
+                            <li><strong>Control Structures:</strong> We will learn about loops, conditional statements, and functions.</li>
+                            <li><strong>Intermediate Topics:</strong> We will explore object-oriented programming, file handling, and exception handling.</li>
+                            <li><strong>Advanced Topics:</strong> We will dive into meta programming and more advanced topics which I don't know for now.</li>
+                        </ul>
+                    </p>
+                <h3>Learning Method and how to use this tutorial:</h3>
+                    <p>
+                        <ol>
+                            <li><strong>Read:</strong> Read the content and understand the concepts.</li>
+                            <li><strong>Practice:</strong> Practice by writing code snippets and running them in your IDE.</li>
+                            <li><strong>Doing homeworks:</strong> You should do the homeworks and check them with solution in my repo to determine how you need to learn.</li>
+                            <li><strong>Ask Questions:</strong> Ask questions in the comments section or in our discord server.</li>
+                            <li><strong>Review:</strong> Review the concepts regularly to reinforce your learning.</li>
+                            <li><strong>Share:</strong> Share your progress and code snippets with others to get feedback.</li>
+                            <li><strong>Contribute:</strong> Contribute to our open-source AI project.</li>
+                        </ol>
+                    </p>
+        </Section>
+
+        <Section>
+            <h2 id="install-python">2. Install Python</h2>
+
+                <h3>2.1 Windows</h3>
+                <p>There are two ways for installing Python on your computer with Windows OS:</p>
+                <ol>
+                    <li><strong>Using installation media</strong></li>
+                    <li><strong>Install Python in Windows Appstore</strong></li>
+                </ol>
+                    <h4>2.1.1 Installing Python: USING INSTALLATION MEDIA</h4>
+                        <h5>Step 1: Download Python</h5>
+                            <ol>
+                                <li>Go to the official Python website: <a href="https://www.python.org/downloads/" target="_blank">https://www.python.org/downloads/</a></li>
+                                <li>Click the <strong>"Download Python X.X.X"</strong> button (it will automatically suggest the latest stable version for Windows).</li>
+                                <li>Save the installer (.exe file) to your computer.</li>
+                            </ol>
+                        <h5>Step 2: Run the Installer</h5>
+                            <ol>
+                                <li>Locate the downloaded file (usually in the <strong>Downloads</strong> folder) and double-click it to run.</li>
+                                <li><strong>Important:</strong> Check the box <strong>"Add Python to PATH"</strong> at the bottom of the installer window.</li>
+                                <li>Click <strong>"Install Now"</strong> for a default installation (recommended for most users).</li>
+                            </ol>
+                        <h5>Step 3: Verify the Installation</h5>
+                            <ol>
+                                <li>Open <strong>Command Prompt</strong> (<code>Win + R</code>, type <code>cmd</code>, and press <strong>Enter</strong>).</li>
+                                <li>Type the following command and press <strong>Enter</strong>:
+                                    <pre><code>python --version</code></pre>
+                                    or
+                                    <pre><code>python -V</code></pre>
+                                </li>
+                                <li>If Python is installed correctly, it will display the installed version (e.g., <code>Python 3.13.2</code>).</li>
+                            </ol>
+                        <h5><strong>Step 4: Install pip (Optional)</strong></h5>
+                            <ol>
+                                <li><code>pip</code> (Python package manager) is usually included by default. You can check if it's installed by running:
+                                    <pre><code>pip --version</code></pre>
+                                </li>
+                                <li>If it's not installed, you can install it with:
+                                    <pre><code>python -m ensurepip --default-pip</code></pre>
+                                </li>
+                            </ol>
+                    <h4>2.1.2 Installing Python: USING WINDOWS APPSTORE</h4>
+                        <h5>Step 1: Open Windows Appstore</h5>
+                            <ol>
+                                <li>Open Windows Appstore from your start menu.</li>
+                                <li>Search for Python and click on the first result.</li>
+                            </ol>
+                        <h5>Step 2: Install Python</h5>
+                            <ol>
+                                <li>Click on the install button and wait for the installation to complete.</li>
+                                <li>Open Command Prompt and type <code>python --version</code> to check if Python is installed correctly.</li>
+                            </ol>
+                <h3>2.2 Unix</h3>
+                    <p>Python is pre-installed on most Unix-based systems. You can check the installed version by running:</p>
+                        <pre><code>python --version</code></pre>
+                    <p>If Python is not installed, you can install it using your package manager:</p>
+                        <pre><code>sudo apt-get install python3</code></pre>
+                    <p>Replace <code>apt-get</code> with your package manager (e.g., <code>yum</code>, <code>dnf</code>, <code>zypper</code>) if you're using a different distribution.</p>
+                        <div class="note">
+                            <strong>Note:</strong><br>Some Unix-based systems may use <code>python</code> instead of <code>python3</code> for Python 3.
+                        </div>
+                <h3>2.3 macOS</h3>
+                    <p>macOS comes with Python 2 pre-installed. You can install Python 3 using <a href="https://brew.sh/" target="_blank">Homebrew</a>:</p>
+                        <pre><code>brew install python</code></pre>
+                    <p>After installation, you can run Python 3 using:</p>
+                        <pre><code>python3</code></pre>
+                        <div class="note">
+                            <strong>Note:</strong><br> Homebrew is a package manager for macOS. You can install it by running:
+                            <pre><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></pre>
+                        </div>
+    </Section>
+
+    <Section>
+        <h2 id="setupIDE">3. Set Up a Development Environment</h2>
+            <h3><Strong>Step 1: Install VS Code</Strong></h3>
+                <p>Download and install VS Code from:
+                    <a href="https://code.visualstudio.com/" target="_blank">https://code.visualstudio.com/</a>
+                    Open VS Code after installation.</p>
+            <h3><Strong>Step 2: Install Essential Extensions</Strong></h3>
+                <p>In VS Code, go to <strong>Extensions (<code>Ctrl+Shift+X</code>)</strong> and install:</p>
                 <ul>
-                    <li><strong>Easy to learn:</strong> Python has a simple syntax that emphasizes readability and reduces the cost
-                        of program maintenance.</li>
-                    <li><strong>High demand:</strong> Python is one of the most popular programming languages in the world, with
-                        applications in web development, data science, machine learning, and more.</li>
-                    <li><strong>Community support:</strong> Python has a large and active community that provides tutorials,
-                        libraries, and frameworks to help you get started.</li>
-                    <li><strong>Fast in development:</strong> Python is an interpreted language, which can save you considerable time 
-                        during program development because no compilation and linking is necessary.</li>
+                    <li><strong>Python</strong> (by Microsoft) – <strong>Must-have for Python development</strong></li>
+                    <li><strong>Pylance</strong> – Provides <strong>fast</strong> and <strong>smart IntelliSense (autocomplete)</strong></li>
+                    <li><strong>Jupyter</strong> – Enables <strong>Jupyter Notebooks</strong> for AI/ML work</li>
+                    <li><strong>Python Environment Manager</strong> – Helps manage <strong>virtual environments</strong></li>
+                    <li><strong>Live Share</strong> (optional) – If collaborating with others</li>
+                    <li><strong>GitHub Copilot (AI Code Assistant)</strong> (optional) – Improves <strong>autocomplete</strong></li>
                 </ul>
-            <h3>how this learning journey will works:</h3>
-                <p>I will update this page and in 3 months we will learn how to:
-                    <ul>
-                        <li><strong>installation:</strong> how to download and install last version of Python in your OS.</li>
-                        <li><strong>Setting up IDE:</strong> We will work with VSCode and here I give you a full roadmap for setting up VSCode for Python Programming, but introduce other IDE's too.</li>
-                        <li><strong>Run First .py:</strong> You learn how to run first .py file and see result in a console session or interactive console.</li>
-                    </ul>
-                Then our journey will continue with:
-                    <ul>
-                        <li><strong>Python Basics:</strong> We will learn about Python syntax, variables, data types, and operators.</li>
-                        <li><strong>Control Structures:</strong> We will learn about loops, conditional statements, and functions.</li>
-                        <li><strong>Intermediate Topics:</strong> We will explore object-oriented programming, file handling, and exception handling.</li>
-                        <li><strong>Advanced Topics:</strong> We will dive into meta programming and more advanced topics which I don't know for now.</li>
-                    </ul>
+            <h3><Strong>Step 3: Set Up a Virtual Environment (Best Practice)</Strong></h3>
+                <p>Using a <strong>virtual environment</strong> keeps dependencies isolated.</p>
+                <ol>
+                    <li><strong>Create a virtual environment:</strong>
+                        <pre><code>python -m venv venv</code></pre>
+                    </li>
+                    <li><strong>Activate it:</strong>
+                        <ul>
+                            <li><strong>Windows (Command Prompt):</strong>
+                                <pre><code>venv\Scripts\activate</code></pre>
+                            </li>
+                            <li><strong>Windows (PowerShell):</strong>
+                                <pre><code>.\venv\Scripts\Activate.ps1</code></pre>
+                            </li>
+                            <li><strong>Mac/Linux:</strong>
+                                <pre><code>source venv/bin/activate</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Confirm activation:</strong>
+                        <pre><code>python -m pip install --upgrade pip</code></pre>
+                    </li>
+                </ol>
+            <h3><Strong>Step 4: Install AI & ML Libraries</Strong></h3>
+                <p>Inside the virtual environment, install essential Python libraries:</p>
+                    <pre><code>pip install numpy pandas matplotlib seaborn scikit-learn jupyter notebook</code></pre>
+                <p>For <strong>Deep Learning</strong>:</p>
+                    <pre><code>pip install tensorflow keras torch torchvision torchaudio</code></pre>
+                <p>For <strong>NLP</strong>:</p>
+                    <pre><code>pip install nltk spacy transformers</code></pre>
+                <p>For <strong>Data Handling</strong>:</p>
+                    <pre><code>pip install pandas openpyxl beautifulsoup4 requests</code></pre>
+            <h3><Strong>Step 5: Configure VS Code for Python</Strong></h3>
+                <p>1. <strong>Open VS Code & Select the Python Interpreter</strong>:
+                    Press <code>Ctrl+Shift+P</code> → Type <strong>"Python: Select Interpreter"</strong>
+                    Choose the <strong>Python version inside your virtual environment</strong>.
                 </p>
-            <h3>Learning Method and how to use this tutorial:</h3>
-                <p>
-                    <ol>
-                        <li><strong>Read:</strong> Read the content and understand the concepts.</li>
-                        <li><strong>Practice:</strong> Practice by writing code snippets and running them in your IDE.</li>
-                        <li><strong>Doing homeworks:</strong> You should do the homeworks and check them with solution in my repo to determine how you need to learn.</li>
-                        <li><strong>Ask Questions:</strong> Ask questions in the comments section or in our discord server.</li>
-                        <li><strong>Review:</strong> Review the concepts regularly to reinforce your learning.</li>
-                        <li><strong>Share:</strong> Share your progress and code snippets with others to get feedback.</li>
-                        <li><strong>Contribute:</strong> Contribute to our open-source AI project.</li>
-                    </ol>
+                <p>2. <strong>Enable Jupyter Notebook Support</strong>:
+                    Open a <code>.ipynb</code> file OR run:
+                    <pre><code>jupyter notebook</code></pre>
                 </p>
-
-        <h2 id="install-python">2. Install Python</h2>
-
-            <h3>2.1 Windows</h3>
-            <p>There are two ways for installing Python on your computer with Windows OS:</p>
-            <ol>
-                <li><strong>Using installation media</strong></li>
-                <li><strong>Install Python in Windows Appstore</strong></li>
-            </ol>
-                <h4>2.1.1 Installing Python: USING INSTALLATION MEDIA</h4>
-                    <h5>Step 1: Download Python</h5>
-                        <ol>
-                            <li>Go to the official Python website: <a href="https://www.python.org/downloads/" target="_blank">https://www.python.org/downloads/</a></li>
-                            <li>Click the <strong>"Download Python X.X.X"</strong> button (it will automatically suggest the latest stable version for Windows).</li>
-                            <li>Save the installer (.exe file) to your computer.</li>
-                        </ol>
-                    <h5>Step 2: Run the Installer</h5>
-                        <ol>
-                            <li>Locate the downloaded file (usually in the <strong>Downloads</strong> folder) and double-click it to run.</li>
-                            <li><strong>Important:</strong> Check the box <strong>"Add Python to PATH"</strong> at the bottom of the installer window.</li>
-                            <li>Click <strong>"Install Now"</strong> for a default installation (recommended for most users).</li>
-                        </ol>
-                    <h5>Step 3: Verify the Installation</h5>
-                        <ol>
-                            <li>Open <strong>Command Prompt</strong> (<code>Win + R</code>, type <code>cmd</code>, and press <strong>Enter</strong>).</li>
-                            <li>Type the following command and press <strong>Enter</strong>:
-                                <pre><code>python --version</code></pre>
-                                or
-                                <pre><code>python -V</code></pre>
-                            </li>
-                            <li>If Python is installed correctly, it will display the installed version (e.g., <code>Python 3.13.2</code>).</li>
-                        </ol>
-                    <h5><strong>Step 4: Install pip (Optional)</strong></h5>
-                        <ol>
-                            <li><code>pip</code> (Python package manager) is usually included by default. You can check if it's installed by running:
-                                <pre><code>pip --version</code></pre>
-                            </li>
-                            <li>If it's not installed, you can install it with:
-                                <pre><code>python -m ensurepip --default-pip</code></pre>
-                            </li>
-                        </ol>
-                <h4>2.1.2 Installing Python: USING WINDOWS APPSTORE</h4>
-                    <h5>Step 1: Open Windows Appstore</h5>
-                        <ol>
-                            <li>Open Windows Appstore from your start menu.</li>
-                            <li>Search for Python and click on the first result.</li>
-                        </ol>
-                    <h5>Step 2: Install Python</h5>
-                        <ol>
-                            <li>Click on the install button and wait for the installation to complete.</li>
-                            <li>Open Command Prompt and type <code>python --version</code> to check if Python is installed correctly.</li>
-                        </ol>
-            <h3>2.2 Unix</h3>
-                <p>Python is pre-installed on most Unix-based systems. You can check the installed version by running:</p>
-                    <pre><code>python --version</code></pre>
-                <p>If Python is not installed, you can install it using your package manager:</p>
-                    <pre><code>sudo apt-get install python3</code></pre>
-                <p>Replace <code>apt-get</code> with your package manager (e.g., <code>yum</code>, <code>dnf</code>, <code>zypper</code>) if you're using a different distribution.</p>
-                    <div class="note">
-                        <strong>Note:</strong> Some Unix-based systems may use <code>python</code> instead of <code>python3</code> for Python 3.
-                    </div>
-            <h3>2.3 macOS</h3>
-                <p>macOS comes with Python 2 pre-installed. You can install Python 3 using <a href="https://brew.sh/" target="_blank">Homebrew</a>:</p>
-                    <pre><code>brew install python</code></pre>
-                <p>After installation, you can run Python 3 using:</p>
-                    <pre><code>python3</code></pre>
-                    <div class="note">
-                        <strong>Note:</strong> Homebrew is a package manager for macOS. You can install it by running:
-                        <pre><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></pre>
-                    </div>
-
-    <h2 id="setupIDE">3. Set Up a Development Environment</h2>
-        <h3><Strong>Step 1: Install VS Code</Strong></h3>
-            <p>Download and install VS Code from:
-                <a href="https://code.visualstudio.com/" target="_blank">https://code.visualstudio.com/</a>
-                Open VS Code after installation.</p>
-        <h3><Strong>Step 2: Install Essential Extensions</Strong></h3>
-            <p>In VS Code, go to <strong>Extensions (<code>Ctrl+Shift+X</code>)</strong> and install:</p>
-            <ul>
-                <li><strong>Python</strong> (by Microsoft) – <strong>Must-have for Python development</strong></li>
-                <li><strong>Pylance</strong> – Provides <strong>fast</strong> and <strong>smart IntelliSense (autocomplete)</strong></li>
-                <li><strong>Jupyter</strong> – Enables <strong>Jupyter Notebooks</strong> for AI/ML work</li>
-                <li><strong>Python Environment Manager</strong> – Helps manage <strong>virtual environments</strong></li>
-                <li><strong>Live Share</strong> (optional) – If collaborating with others</li>
-                <li><strong>GitHub Copilot (AI Code Assistant)</strong> (optional) – Improves <strong>autocomplete</strong></li>
-            </ul>
-        <h3><Strong>Step 3: Set Up a Virtual Environment (Best Practice)</Strong></h3>
-            <p>Using a <strong>virtual environment</strong> keeps dependencies isolated.</p>
-            <ol>
-                <li><strong>Create a virtual environment:</strong>
-                    <pre><code>python -m venv venv</code></pre>
-                </li>
-                <li><strong>Activate it:</strong>
+                <p>3. <strong>(Optional) Autoformat Code for Readability</strong>:
+                    Install <strong>black</strong>:
+                    <pre><code>pip install black</code></pre>
+                    Enable <strong>format on save</strong> in VS Code:
+                    Go to <strong>Settings (<code>Ctrl+,</code>)</strong>
+                    Search for <code>Format On Save</code> and <strong>enable it</strong>.
+                </p>
+            <h3><Strong>Step 6: Configure VS Code Settings for Python</Strong></h3>
+                <p><strong>Recommended Settings (JSON format)</strong>
+                    Go to <strong>Settings (<code>Ctrl+,</code>)</strong> → Click <strong>"Open Settings (JSON)"</strong> → Add:
+                </p>
+                    <pre>
+                        <code>
+                            {
+                                "python.formatting.provider": "black",
+                                "editor.formatOnSave": true,
+                                "editor.codeActionsOnSave": {
+                                    "source.organizeImports": true
+                                },
+                                "python.analysis.typeCheckingMode": "basic",
+                                "python.linting.enabled": true,
+                                "python.linting.pylintEnabled": true
+                            }
+                        </code>
+                    </pre>
+            <h3><Strong>Step 7: Test Your Setup</Strong></h3>
+                <p>Try running a simple script:</p>
+                    <pre><code>import tensorflow as tf rint("TensorFlow version:", tf.__version__)</code></pre>
+                <p>If it prints the TensorFlow version, everything is set up correctly!</p>
+                
+                <div class="note">
+                    <strong>💡 Bonus: Useful VS Code Shortcuts</strong>
                     <ul>
-                        <li><strong>Windows (Command Prompt):</strong>
-                            <pre><code>venv\Scripts\activate</code></pre>
-                        </li>
-                        <li><strong>Windows (PowerShell):</strong>
-                            <pre><code>.\venv\Scripts\Activate.ps1</code></pre>
-                        </li>
-                        <li><strong>Mac/Linux:</strong>
-                            <pre><code>source venv/bin/activate</code></pre>
-                        </li>
+                        <li><strong>Run Python File</strong> → <code>Ctrl+Shift+B</code></li>
+                        <li><strong>Open Terminal</strong> → <code>Ctrl+`</code></li>
+                        <li><strong>Toggle Sidebar</strong> → <code>Ctrl+B</code></li>
+                        <li><strong>Quick Fix (Linting Errors)</strong> → <code>Ctrl+.</code></li>
                     </ul>
-                </li>
-                <li><strong>Confirm activation:</strong>
-                    <pre><code>python -m pip install --upgrade pip</code></pre>
-                </li>
-            </ol>
-        <h3><Strong>Step 4: Install AI & ML Libraries</Strong></h3>
-            <p>Inside the virtual environment, install essential Python libraries:</p>
-                <pre><code>pip install numpy pandas matplotlib seaborn scikit-learn jupyter notebook</code></pre>
-            <p>For <strong>Deep Learning</strong>:</p>
-                <pre><code>pip install tensorflow keras torch torchvision torchaudio</code></pre>
-            <p>For <strong>NLP</strong>:</p>
-                <pre><code>pip install nltk spacy transformers</code></pre>
-            <p>For <strong>Data Handling</strong>:</p>
-                <pre><code>pip install pandas openpyxl beautifulsoup4 requests</code></pre>
-        <h3><Strong>Step 5: Configure VS Code for Python</Strong></h3>
-            <p>1. <strong>Open VS Code & Select the Python Interpreter</strong>:
-                Press <code>Ctrl+Shift+P</code> → Type <strong>"Python: Select Interpreter"</strong>
-                Choose the <strong>Python version inside your virtual environment</strong>.
-            </p>
-            <p>2. <strong>Enable Jupyter Notebook Support</strong>:
-                Open a <code>.ipynb</code> file OR run:
-                <pre><code>jupyter notebook</code></pre>
-            </p>
-            <p>3. <strong>(Optional) Autoformat Code for Readability</strong>:
-                Install <strong>black</strong>:
-                <pre><code>pip install black</code></pre>
-                Enable <strong>format on save</strong> in VS Code:
-                Go to <strong>Settings (<code>Ctrl+,</code>)</strong>
-                Search for <code>Format On Save</code> and <strong>enable it</strong>.
-            </p>
-        <h3><Strong>Step 6: Configure VS Code Settings for Python</Strong></h3>
-            <p><strong>Recommended Settings (JSON format)</strong>
-                Go to <strong>Settings (<code>Ctrl+,</code>)</strong> → Click <strong>"Open Settings (JSON)"</strong> → Add:
-            </p>
-                <pre>
-                    <code>
-                        {
-                            "python.formatting.provider": "black",
-                            "editor.formatOnSave": true,
-                            "editor.codeActionsOnSave": {
-                                "source.organizeImports": true
-                            },
-                            "python.analysis.typeCheckingMode": "basic",
-                            "python.linting.enabled": true,
-                            "python.linting.pylintEnabled": true
-                        }
-                    </code>
-                </pre>
-        <h3><Strong>Step 7: Test Your Setup</Strong></h3>
-            <p>Try running a simple script:</p>
-                <pre><code>import tensorflow as tf rint("TensorFlow version:", tf.__version__)</code></pre>
-            <p>If it prints the TensorFlow version, everything is set up correctly!</p>
-            
-            <div class="note">
-                <strong>💡 Bonus: Useful VS Code Shortcuts</strong>
-                <ul>
-                    <li><strong>Run Python File</strong> → <code>Ctrl+Shift+B</code></li>
-                    <li><strong>Open Terminal</strong> → <code>Ctrl+`</code></li>
-                    <li><strong>Toggle Sidebar</strong> → <code>Ctrl+B</code></li>
-                    <li><strong>Quick Fix (Linting Errors)</strong> → <code>Ctrl+.</code></li>
-                </ul>
-            </div>
-        <h3>PyCharm vs. VS Code vs. Python IDLE</h2>
-        <table>
-            <tr>
-                <th>Feature</th>
-                <th>PyCharm (Professional IDE)</th>
-                <th>VS Code (Lightweight & Customizable)</th>
-                <th>Python IDLE (Basic & Simple)</th>
-            </tr>
-            <tr>
-                <td><b>Best For</b></td>
-                <td>AI, Data Science, Large Projects</td>
-                <td>General Python Dev, AI, Web Dev, ML</td>
-                <td>Beginners, Small Scripts, Learning</td>
-            </tr>
-            <tr>
-                <td><b>Ease of Use</b></td>
-                <td>Moderate (Feature-Rich)</td>
-                <td>Moderate (Needs Extensions)</td>
-                <td>Very Easy (Built-in with Python)</td>
-            </tr>
-            <tr>
-                <td><b>Performance</b></td>
-                <td>Heavy (More RAM & CPU Needed)</td>
-                <td>Lightweight (Faster & Flexible)</td>
-                <td>Very Light (Basic Editor)</td>
-            </tr>
-            <tr>
-                <td><b>Auto-complete</b></td>
-                <td>✅ Advanced AI-powered</td>
-                <td>✅ With Extensions</td>
-                <td>❌ Minimal</td>
-            </tr>
-            <tr>
-                <td><b>Debugging</b></td>
-                <td>✅ Built-in Powerful Debugger</td>
-                <td>✅ Built-in Debugger (Needs Extension)</td>
-                <td>🟡 Basic Debugger</td>
-            </tr>
-            <tr>
-                <td><b>Jupyter Support</b></td>
-                <td>✅ Built-in</td>
-                <td>✅ Needs Jupyter Extension</td>
-                <td>❌ Not Supported</td>
-            </tr>
-            <tr>
-                <td><b>Git Integration</b></td>
-                <td>✅ Yes (Built-in)</td>
-                <td>✅ Yes (Needs Extension)</td>
-                <td>❌ No Git Support</td>
-            </tr>
-            <tr>
-                <td><b>Customization</b></td>
-                <td>❌ Less (Fixed UI)</td>
-                <td>✅ Highly Customizable</td>
-                <td>❌ No Customization</td>
-            </tr>
-            <tr>
-                <td><b>Virtual Envs</b></td>
-                <td>✅ Easy Management</td>
-                <td>✅ Manual Setup Needed</td>
-                <td>❌ No Virtual Env Support</td>
-            </tr>
-            <tr>
-                <td><b>AI/ML Support</b></td>
-                <td>✅ Best for AI/ML (TensorFlow, PyTorch)</td>
-                <td>✅ Good for AI/ML with Extensions</td>
-                <td>❌ No AI/ML Support</td>
-            </tr>
-            <tr>
-                <td><b>Installation</b></td>
-                <td>Requires Download & Setup</td>
-                <td>Simple (Add Python Extension)</td>
-                <td>Pre-installed with Python</td>
-            </tr>
-        </table>
+                </div>
+            <h3>PyCharm vs. VS Code vs. Python IDLE</h2>
+            <table>
+                <tr>
+                    <th>Feature</th>
+                    <th>PyCharm (Professional IDE)</th>
+                    <th>VS Code (Lightweight & Customizable)</th>
+                    <th>Python IDLE (Basic & Simple)</th>
+                </tr>
+                <tr>
+                    <td><b>Best For</b></td>
+                    <td>AI, Data Science, Large Projects</td>
+                    <td>General Python Dev, AI, Web Dev, ML</td>
+                    <td>Beginners, Small Scripts, Learning</td>
+                </tr>
+                <tr>
+                    <td><b>Ease of Use</b></td>
+                    <td>Moderate (Feature-Rich)</td>
+                    <td>Moderate (Needs Extensions)</td>
+                    <td>Very Easy (Built-in with Python)</td>
+                </tr>
+                <tr>
+                    <td><b>Performance</b></td>
+                    <td>Heavy (More RAM & CPU Needed)</td>
+                    <td>Lightweight (Faster & Flexible)</td>
+                    <td>Very Light (Basic Editor)</td>
+                </tr>
+                <tr>
+                    <td><b>Auto-complete</b></td>
+                    <td>✅ Advanced AI-powered</td>
+                    <td>✅ With Extensions</td>
+                    <td>❌ Minimal</td>
+                </tr>
+                <tr>
+                    <td><b>Debugging</b></td>
+                    <td>✅ Built-in Powerful Debugger</td>
+                    <td>✅ Built-in Debugger (Needs Extension)</td>
+                    <td>🟡 Basic Debugger</td>
+                </tr>
+                <tr>
+                    <td><b>Jupyter Support</b></td>
+                    <td>✅ Built-in</td>
+                    <td>✅ Needs Jupyter Extension</td>
+                    <td>❌ Not Supported</td>
+                </tr>
+                <tr>
+                    <td><b>Git Integration</b></td>
+                    <td>✅ Yes (Built-in)</td>
+                    <td>✅ Yes (Needs Extension)</td>
+                    <td>❌ No Git Support</td>
+                </tr>
+                <tr>
+                    <td><b>Customization</b></td>
+                    <td>❌ Less (Fixed UI)</td>
+                    <td>✅ Highly Customizable</td>
+                    <td>❌ No Customization</td>
+                </tr>
+                <tr>
+                    <td><b>Virtual Envs</b></td>
+                    <td>✅ Easy Management</td>
+                    <td>✅ Manual Setup Needed</td>
+                    <td>❌ No Virtual Env Support</td>
+                </tr>
+                <tr>
+                    <td><b>AI/ML Support</b></td>
+                    <td>✅ Best for AI/ML (TensorFlow, PyTorch)</td>
+                    <td>✅ Good for AI/ML with Extensions</td>
+                    <td>❌ No AI/ML Support</td>
+                </tr>
+                <tr>
+                    <td><b>Installation</b></td>
+                    <td>Requires Download & Setup</td>
+                    <td>Simple (Add Python Extension)</td>
+                    <td>Pre-installed with Python</td>
+                </tr>
+            </table>
+    </Section>
     
-    <h2 id="firstscript">4. Run your first script</h2>
-        <p>Let's create a simple Python script that prints <code>Hello, World!</code> to the console.</p>
-        <ol>
-            <li>Open your IDE or text editor and create a file named <code>hello.py</code>.</li>
-            <li>Add this code:
-                <pre><code>
+    <Section>
+        <h2 id="firstscript">4. Run your first script</h2>
+            <p>Let's create a simple Python script that prints <code>Hello, World!</code> to the console.</p>
+            <ol>
+                <li>Open your IDE or text editor and create a file named <code>hello.py</code>.</li>
+                <li>Add this code:
+                    <pre><code>
 # hello.py
 print("Hello, World!")
-                </code></pre>
-            </li>
-            <li>Save the file and open a terminal.</li>
-            <li>Navigate to the file's directory and run:
-                <pre><code>python hello.py</code></pre>
-            </li>
-            <li>You should see:
-                <pre><code>Hello, World!</code></pre>
-            </li>
-        </ol>
+                    </code></pre>
+                </li>
+                <li>Save the file and open a terminal.</li>
+                <li>Navigate to the file's directory and run:
+                    <pre><code>python hello.py</code></pre>
+                </li>
+                <li>You should see:
+                    <pre><code>Hello, World!</code></pre>
+                </li>
+            </ol>
+    </Section>
 
-    <h2>Congratulations! 🎉</h2>
-    <p>You've completed the Python Starter course!</p>
-    <p>
-        Now you ready to start learning Python.
-        For start learning Python from the scratch to Pro AI development you can see our <a href="Python/Toturial/Basic.Html">Basic Python Tutorial</a>.
-    </p>
+    <Section>
+        <h2>Congratulations! 🎉</h2>
+        <p>You've completed the Python Starter course!</p>
+        <p>
+            Now you ready to start learning Python.
+            For start learning Python from the scratch to Pro AI development you can see our <a href="Python/Toturial/Basic.Html">Basic Python Tutorial</a>.
+        </p>
+    </Section>
 
     <footer>
         <p>&copy; 2025 Learn Python With HM. All rights reserved.</p>
